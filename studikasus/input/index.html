@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Form Input Persampahan</h2>
+    <form action="input.php" onsubmit="return validateForm()" method="post">
+        <label for="nama_fasil">Nama Fasilitas:</label><br>
+        <input type="text" id="nama_fasil" name="nama_fasil" value=""><br>
+        <label for="kalurahan">Kalurahan:</label><br>
+        <input type="text" id="kal" name="kalurahan" value=""><br>
+        <label for="kapanewon">Kapanewon:</label><br>
+        <input type="text" id="kap" name="kapanewon" value=""><br>
+        <label for="x">Longitude (X):</label><br>
+        <input type="text" id="x" name="x" value=""><br>
+        <label for="y">Latitude (Y):</label><br>
+        <input type="text" id="y" name="y" value=""><br>
+        <label for="status">Status:</label><br>
+        <input type="text" id="status" name="status" value=""><br>
+        <label for="alamat">Alamat:</label><br>
+        <input type="text" id="alamat" name="alamat" value=""><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="informasi"></p>
+    <script>
+        function validateForm() {
+            let x = document.getElementById("x").value;
+            let text = "";
+            if (isNaN(x) || x === "") {
+                text = "Data Longitude (X) harus berupa angka";
+                event.preventDefault();
+            }
+            document.getElementById("informasi").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>
